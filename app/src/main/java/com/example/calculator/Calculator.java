@@ -4,34 +4,31 @@ import java.util.MissingFormatArgumentException;
 
 public class Calculator {
 
-    private static final char PLUS = '+';
-    private static final char MINUS = '-';
-    private static final char MULTIPLY = '×';
-    private static final char DIVIDE = '÷';
-    private char currentAction;
+    private static final String PLUS = "+";
+    private static final String MINUS = "-";
+    private static final String MULTIPLY = "×";
+    private static final String DIVIDE = "÷";
+    private String currentAction;
 
-    public void setCurrentAction(char action){
+    public void setCurrentAction(String action){
         currentAction = action;
     }
 
-    public double calculate(double firstNumber, double secondNumber){
-        double result = 0;
+    public float calculate(int firstNumber, int secondNumber){
+        int result = 0;
 
-        switch (currentAction){
-            case PLUS:
-                result = firstNumber + secondNumber;
-                break;
-
+        switch (currentAction) {
             case MINUS:
                 result = firstNumber - secondNumber;
                 break;
-
             case MULTIPLY:
                 result = firstNumber * secondNumber;
                 break;
-
             case DIVIDE:
                 result = firstNumber / secondNumber;
+                break;
+            case PLUS:
+                result = firstNumber + secondNumber;
                 break;
         }
 

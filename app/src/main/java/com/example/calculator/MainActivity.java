@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,6 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String ARG_RESULT = "ARG_RESULT";
+    private static final String ARG_INPUT = "ARG_INPUT";
 
     Calculator calculator;
     EditText editText;
@@ -137,5 +141,19 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.comma_btn).setOnClickListener(clickListener);
         findViewById(R.id.equals_btn).setOnClickListener(clickListener);
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putString(ARG_RESULT, result.getText().toString());
+        outState.putString(ARG_INPUT, editText.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        editText.setText(savedInstanceState.getString(ARG_INPUT, ""));
+        result.setText(savedInstanceState.getString(ARG_RESULT, ""));
     }
 }

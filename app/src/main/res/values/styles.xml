@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NumbersButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="OperationsButtonsStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/gray</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+</resources>

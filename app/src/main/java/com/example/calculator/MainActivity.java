@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.calculator.domain.Calculator;
 
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String ARG_RESULT = "ARG_RESULT";
     private static final String ARG_INPUT = "ARG_INPUT";
+    protected static final String DARK_THEME = "DARK_THEME";
+    protected static final String LIGHT_THEME = "LIGHT_THEME";
 
     Calculator calculator;
     EditText editText;
@@ -121,12 +124,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (getIntent().getIntExtra(DARK_THEME, 0) != 0){
+            setTheme(R.style.Theme_Calculator_Dark);
+            Toast toast = Toast.makeText(this, "Выбрана темная тема", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else if (getIntent().getIntExtra(LIGHT_THEME, 0) != 0){
+            setTheme(R.style.Theme_Calculator);
+            Toast toast = Toast.makeText(this, "Выбрана светлая тема", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
+
         setContentView(R.layout.activity_main);
 
         calculator = new Calculator();
 
         editText = findViewById(R.id.calculator_field);
         result = findViewById(R.id.result);
+
 
         findViewById(R.id.zero_btn).setOnClickListener(clickListener);
         findViewById(R.id.one_btn).setOnClickListener(clickListener);

@@ -19,4 +19,5 @@
     <string name="divide">÷</string>
     <string name="multiply">×</string>
     <string name="backspace">⌫</string>
+    <string name="change_theme">Сменить тему</string>
 </resources>

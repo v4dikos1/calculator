@@ -2,4 +2,5 @@
 <resources>
     <dimen name="btn_text_size">48sp</dimen>
     <dimen name="clc_field_text_size">32sp</dimen>
+    <dimen name="change_theme_text_size">12sp</dimen>
 </resources>

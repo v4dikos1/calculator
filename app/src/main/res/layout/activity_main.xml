@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <EditText
         android:id="@+id/calculator_field"
         android:layout_width="match_parent"
@@ -31,6 +32,7 @@
         tools:text="результат" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calculator_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,6 +46,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/comma_btn"
             app:layout_constraintStart_toEndOf="@+id/percent_btn" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/change_theme_button"
+            style="@style/NumbersButtonStyle"
+            app:layout_constraintBottom_toTopOf="@id/backspace_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/change_theme"
+            android:textSize="@dimen/change_theme_text_size"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/percent_btn"
@@ -70,9 +81,9 @@
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:text="@string/equals"
-            app:cornerRadius="0dp"
             android:textColor="@color/white"
             android:textSize="@dimen/btn_text_size"
+            app:cornerRadius="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/comma_btn"
